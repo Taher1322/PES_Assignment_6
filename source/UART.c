@@ -34,8 +34,8 @@
 #include "uart.h"
 #include "cbfifo.h"
 
-//Defining the UART parameters
-#define UART_OVERSAMPLE_RATE 	(16)		//Oversampling rate
+//Defining the UART parameters and easy to change in future
+#define UART_OVERSAMPLE_RATE 	(16)		//Over sampling rate
 #define SYS_CLOCK				(24e6)		//Running the system on 24MHz
 #define PARITY      			(0)			//Parity None
 #define DATA_BITS   			(0)         //2 modes for data - 8 bits and 9 bits --> For 8 bits - 0 and For 9 bits - 1
@@ -101,8 +101,9 @@ void Init_UART0(uint32_t baud_rate) {
 	//temp = UART0->D;
 	UART0->S1 &= ~UART0_S1_RDRF_MASK;
 
-	//if(temp)			//to suppress the compiler warning
-	//{}					//of set but unused variable
+	//Was getting warming when removed this lines. Hence to remove the warning this is commented
+	//if(temp)
+	//{}
 }
 
 //UART0 Interrupt handler

@@ -1,5 +1,5 @@
-command_process.c:44:13:author_handler	16	static
-command_process.c:50:13:dump_handler	24	static
-command_process.c:82:13:help_handler	16	static
-command_process.c:90:13:info_handler	16	static
-command_process.c:98:6:process_command	88	static
+command_process.c:76:13:author_handler	16	static
+command_process.c:83:13:dump_handler	24	static
+command_process.c:122:13:help_handler	16	static
+command_process.c:131:13:info_handler	16	static
+command_process.c:141:6:process_command	88	static

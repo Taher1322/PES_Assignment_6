@@ -1,5 +1,5 @@
 /*****************************************************************************
-* Copyright (C) 2021 by Taher Ujjainwala and Howdy Pierce
+* Copyright (C) 2021 by Taher Ujjainwala
 *
 * Redistribution, modification or use of this software in source or binary
 * forms is permitted as long as the files maintain this copyright. Users are
@@ -14,21 +14,21 @@
  *
  *
  *
- *    File name   : hexdump.c
- *    Description : This file defines the function to implement hexdump
+ *    File name   : main.c - application entry point
+ *    Description : This file call internal functions to read user input data and based on that perform certain actions
  *
  *    Author TAHER UJJAINWALA
  * 	  Tools : MCUXpressor IDE
  * 	  General References used in development:
- * 	  Howdy lectures slides, PES Assignment 2 and Alexander Dean UART section
- * 	  PES Assignment 2 - https://github.com/Taher1322/PES_Assignment_2  (First tested to pass all Howdy Test cases and used as it is for BreakkfastSerial)
+ * 	  Howdy lectures slides and Alexander Dean UART section
+ * 	  PES Assignment 2 - https://github.com/Taher1322/PES_Assignment_2
  * 	  DEAN UART section - https://github.com/alexander-g-dean/ESF/tree/master/NXP/Code/Chapter_8/Serial-Demo
  *
- *
- *    Date  : 11/09/2021
+ *    Date  : 11/11/2021
  *
  *
  */
+
 
 //Including all the header files
 #include "sysclock.h"
@@ -52,19 +52,11 @@ int main(void)
 	//Interactive statements on terminal
 	printf( "Welcome to BreakfastSerial \r\n");
 	printf("?");
-//	printf("Enter command to perform the following functions as shown:\r\n");
-//	printf("'Author' : Name of the Author \r\n");
-//	printf("'Dump <address> <total length>(valid length:0 to 640)':Performs a HEXDUMP\r\n");
-//	printf("'Help' : Get the help menu\r\n");
-
-//	hexdump(0, 64);
-//
-//	hexdump(0xa0, 0x20);
 
 	//Enter infinite loop
 	while (1)
 	{
-		serial_input();
+		serial_input();    //Reading user input from terminal
 	}
 
   return 0 ;

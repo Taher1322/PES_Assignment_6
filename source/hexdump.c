@@ -14,17 +14,19 @@
  *
  *
  *
- *    File name   : main.c - application entry point
- *    Description : This file defines the functions to reset timer, start timer, get current time since start using Systick Timer
+ *    File name   : hexdump.c - application entry point
+ *    Description : This file defines the functions to perform HEX DUMP
  *
  *    Author TAHER UJJAINWALA
  * 	  Tools : MCUXpressor IDE
  * 	  General References used in development:
  * 	  Howdy lectures slides and Alexander Dean UART section
  * 	  PES Assignment 2 - https://github.com/Taher1322/PES_Assignment_2
+ * 	  PES Assignment 1 - Howdy Review
+ * 	  This part of logic was discussed and implemented with Hardwardhan Singh
  * 	  DEAN UART section - https://github.com/alexander-g-dean/ESF/tree/master/NXP/Code/Chapter_8/Serial-Demo
  *
- *    Date  : 11/09/2021
+ *    Date  : 11/11/2021
  *
  *
  */
@@ -32,6 +34,8 @@
 
 #ifndef HEXDUMP_C_
 #define HEXDUMP_C_
+
+//Including all the header files
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
@@ -41,9 +45,20 @@
 #include <stddef.h>
 #include "UART.h"
 
+//Defining Max Hex dump size and Number of character in single line
 #define MAX_HEXDUMP_SIZE 640
 #define PER_LINE_CHARACTERS 16
 
+/*************************
+ *  File name   : int_to_hexstr.c
+ *  Description : Returns Hex representation of an integer.
+ *	Parameters:
+ *  x      Integer
+ *
+ * 	Returns:
+ *  Hex equivalent of the integer
+ *
+ **************************/
 static char int_to_hexchar(int x)
 {
 	if (x >=0 && x < 10)
@@ -55,7 +70,7 @@ static char int_to_hexchar(int x)
 		return '-';
 }
 
-
+//Function to calculate Hex Dump from the address specified
 void hexdump(char *address, size_t nbyte) {
 
 

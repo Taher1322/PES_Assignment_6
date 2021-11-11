@@ -18,7 +18,7 @@
  *    Description : This file tests the Circular Buffer functions
  *
  *    Author Howdy Pierce, howdy.pierce@colorado.edu
- *    I would like thank Howdy for this amazing test cases for CBFIFO
+ *    I would like to thank Howdy for this amazing test cases for CBFIFO
  * 	  Tools : MCUXpressor IDE
  * 	  General References used in development:
  * 	  PES Assignment 2 - https://github.com/Taher1322/PES_Assignment_2
